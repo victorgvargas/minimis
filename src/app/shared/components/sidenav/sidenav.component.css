@@ -1,0 +1,25 @@
+mat-card {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,255,155,1) 0%, rgba(0,62,255,1) 100%);
+    color: #fff;
+}
+
+mat-card .card-container {
+    display: flex;
+}
+
+mat-card .card-container img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+mat-card .card-container mat-card-content {
+    padding-left: 10px;
+}
+
+/* @media (max-width : 1022px) {
+    mat-card .card-container {
+        display: block;
+    }
+} */

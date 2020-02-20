@@ -1,0 +1,73 @@
+mat-card {
+    color: #432c85;
+    width: 260px;
+	text-align: center;
+	margin: 10px;
+}
+
+mat-card mat-card-title {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+mat-card mat-card-content .temp {
+    text-align: center;
+    font-size: 25px;
+}
+
+.plus-button {
+	border: 2px solid #432c85;
+	background-color: #432c85;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+    position: fixed;
+    outline: none;
+	cursor: pointer;
+	right : 20px;
+	bottom: 20px;
+	
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&:before {
+		height: 1em;
+		width: 0.2em;
+	}
+
+	&:after {
+		height: 0.2em;
+		width: 1em;
+	}
+}
+
+.plus-button--large {
+	font-size: 40px;
+}
+
+.container {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.container .plus-button {
+    margin-left: 55px;
+}
+
+@media (max-width : 520px) {
+	.plus-button {
+		width: 1.5em;
+		height: 1.5em;
+	}
+}

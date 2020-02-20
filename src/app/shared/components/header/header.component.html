@@ -1,0 +1,21 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side">
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <div id="overlay"></div>
+    
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <div class="container" (click)="sidenav.toggle()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <img src="/assets/logo.png" alt="Logo">
+            <p>TODAY</p>
+        </mat-toolbar>
+        <div class="card-container">
+            <app-weather-card></app-weather-card>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

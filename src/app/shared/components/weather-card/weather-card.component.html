@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-card *ngFor="let item of response">
+        <mat-card-title>{{ item.name | uppercase}}</mat-card-title>
+        <img mat-card-image src='http://openweathermap.org/img/wn/{{ item.weather[0].icon }}.png'>
+        <mat-card-content>
+            <p class="temp">{{ item.main.temp }}°</p>
+            <p>{{ item.weather[0].main | uppercase }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>Min {{ item.main.temp_min }} Max {{ item.main.temp_max }}</p>
+        </mat-card-footer>
+    </mat-card>
+    <mat-spinner *ngIf="!response"></mat-spinner>
+</div>
+<button 
+    matTooltip="Add city"
+    class="plus-button plus-button--large" 
+    (click)="addCity()"
+>
+</button>
