@@ -22,7 +22,7 @@ export class ModalSearchComponent implements OnInit {
 
   selectCity(){
     if (this.form.valid) {
-      if (this.data.indexOf(this.form.value.city) != -1) {
+      if (this.data.indexOf(this.form.value.city.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")) != -1) {
         alert("Not possible to retrieve data from the same city");
         return;
       }  

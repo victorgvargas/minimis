@@ -11,22 +11,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './shared/components/header/header.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 import { WeatherCardComponent } from './shared/components/weather-card/weather-card.component';
 import { ModalSearchComponent } from './shared/components/modal-search/modal-search.component';
+import { DetailsComponent } from './shared/components/details/details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     SidenavComponent,
     WeatherCardComponent,
-    ModalSearchComponent
+    ModalSearchComponent,
+    DetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { ModalSearchComponent } from './shared/components/modal-search/modal-sea
     MatInputModule,
     MatButtonModule,
     MatTooltipModule,
+    MatMenuModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

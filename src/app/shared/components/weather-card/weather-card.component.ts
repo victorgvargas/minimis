@@ -11,7 +11,7 @@ import { ModalSearchComponent } from '../modal-search/modal-search.component';
 export class WeatherCardComponent implements OnInit {
   city = 'Uberlandia';
   response = [];
-  loader : boolean = true;
+  loader : boolean = false;
   
 
   constructor(private getData : GetServiceService,
@@ -22,23 +22,37 @@ export class WeatherCardComponent implements OnInit {
   }
 
   getCity(){
-    this.getData.onGetData(this.city)
-    .subscribe(res => {
-      this.response.push(res);
+    this.loader = true;
+    setTimeout(() => {
+      this.getData.onGetData(this.city)
+        .subscribe(res => {
+        this.response.push(res);
+        this.loader = false;
     });
+    },1000);
+    
   }
 
   addCity(){
       const dialogRef = this.dialog.open(ModalSearchComponent, {
         width: '40vh',
-        data : this.response.map(element => element.name )
+        data : this.response.map(element => element.name.toUpperCase())
       });
 
       dialogRef.afterClosed().subscribe(res => {
+        this.loader = true;
         if (res) {
           this.response.push(res);
+          this.loader = false;
+        }
+        if (!res) {
+          this.loader = false;
         }
       });
+  }
+
+  onDelete(index){
+    this.response.splice(index, 1);
   }
 
 }
