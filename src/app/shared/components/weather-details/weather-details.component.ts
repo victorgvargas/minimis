@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetServiceService } from '../../services/get-service.service';
-import { map } from 'rxjs/operators';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-weather-details',
@@ -20,13 +20,18 @@ export class WeatherDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.loader = true;
     this.getData.onGetWeekData(this.id).
-      // pipe(map(res => {
-      // })).
       subscribe(res => {
       this.response = res.list;
       this.loader = false;
       console.log(this.response);
     });
+  }
+
+  onCheckDate(date) {
+    if(moment(date).hours() == 15) {
+      return true;
+    }
+    return false;
   }
 
 }
