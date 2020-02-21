@@ -1,0 +1,41 @@
+.sidenav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.sidenav-container mat-sidenav-content mat-toolbar {
+    display: flex;
+    position: relative;
+}
+
+.sidenav-container mat-sidenav-content mat-toolbar img {
+    max-width: 190px;
+    padding-left: 10px;
+}
+
+.sidenav-container mat-sidenav-content mat-toolbar .container div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.sidenav-container mat-sidenav-content mat-toolbar p {
+    color: #432C85;
+    margin: 0 auto;
+}
+
+.sidenav-container mat-sidenav {
+    width: 260px;
+}
+
+.sidenav-container mat-sidenav-content .card-container {
+    /* display: flex; */
+    height: calc(100% - 64px);
+    align-items: center;
+    justify-content: center;
+}
+ 

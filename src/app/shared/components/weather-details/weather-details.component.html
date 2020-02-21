@@ -1,0 +1,29 @@
+<button mat-button routerLink=''>
+    <i class="material-icons">
+        keyboard_arrow_left
+    </i>
+    Go back
+</button>
+<div class="loader"
+    *ngIf="loader"
+>
+</div>
+<div class="container" *ngIf="!loader">
+    <mat-card *ngFor="let item of response">
+        <mat-card-title>
+            {{ item.dt_txt }}
+        </mat-card-title>
+        <img 
+            mat-card-image 
+            src="http://openweathermap.org/img/wn/{{ item.weather[0].icon }}.png" 
+            alt="item.weather[0].main"
+        >
+        <mat-card-content>
+            <p class="temp">{{ item.main.temp }}°</p>
+            <p>{{ item.weather[0].main | uppercase }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>Min {{ item.main.temp_min }}° | Max {{ item.main.temp_max }}°</p>
+        </mat-card-footer>
+    </mat-card>
+</div>

@@ -1,0 +1,39 @@
+<div class="loader"
+    *ngIf="loader"
+>
+</div>
+<div class="container" *ngIf="!loader">
+    <mat-card *ngFor="let item of response; let i = index">
+        <mat-card-title>
+            {{ item.name | uppercase}}
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <i class="material-icons">
+                    more_vert
+                </i>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/weather/{{ item.id }}">View details</button>
+                <button mat-menu-item (click)="onDelete(i)">Delete</button>
+            </mat-menu>
+        </mat-card-title>
+        <img mat-card-image src='http://openweathermap.org/img/wn/{{ item.weather[0].icon }}.png'>
+        <mat-card-content>
+            <p class="temp">{{ item.main.temp }}°</p>
+            <p>{{ item.weather[0].main | uppercase }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>Min {{ item.main.temp_min }}° | Max {{ item.main.temp_max }}°</p>
+        </mat-card-footer>
+    </mat-card>
+</div>
+<button 
+    matTooltip="Add city"
+    class="plus-button plus-button--large" 
+    (click)="addCity()"
+>
+</button>
+<button mat-button class="clear" (click)="onClear()" *ngIf="response.length > 1">
+    <i class="material-icons">
+        clear
+    </i> Clear
+</button>

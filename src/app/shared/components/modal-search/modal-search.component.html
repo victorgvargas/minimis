@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Location</h1>
+<form [formGroup]="form" (ngSubmit)="selectCity()">
+    <div mat-dialog-content>
+    <p>Choose a city: </p>
+    <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput type="text" formControlName="city" placeholder="city">
+    </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+    <!-- <button (click)="onNoClick()">No Thanks</button> -->
+    <button mat-button type="submit">Select</button>
+    </div>
+</form>

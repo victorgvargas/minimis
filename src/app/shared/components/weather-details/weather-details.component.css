@@ -1,0 +1,45 @@
+button {
+    color: #432C85;
+    left: 10px;
+}
+
+button:hover {
+    background-color: #00FF9B;
+}
+
+mat-card {
+    color: #432c85;
+    width: 260px;
+	text-align: center;
+	margin: 10px;
+}
+
+mat-card mat-card-title {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+mat-card mat-card-content .temp {
+    text-align: center;
+    font-size: 25px;
+}
+
+.container {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.loader {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #432c85;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	position: absolute;
+	left: calc(50% - 60px);
+	top: calc(50% - 60px);
+}
